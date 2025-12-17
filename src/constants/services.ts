@@ -12,6 +12,7 @@ export interface Service {
   category: string;
   benefits: string[];
   process: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface ServiceCategory {
@@ -93,6 +94,40 @@ export const SERVICES: Record<string, Service> = {
       'Test uygulaması',
       'Lazer epilasyon işlemi',
       'Soğutma ve bakım'
+    ],
+    faqs: [
+      {
+        question: 'Antalya Beatty Center\'da lazer epilasyon kaç seans sürer?',
+        answer: 'Beatty Center\'da ortalama 6–8 seans lazer epilasyon öneriyoruz. Seans sayısı, uygulama bölgesi, kıl yoğunluğu ve cilt tipinize göre kişiye özel olarak belirlenir.'
+      },
+      {
+        question: 'Beatty Center lazer epilasyon fiyatları ne kadardır?',
+        answer: 'Fiyatlarımız uygulama bölgesine ve kampanyalara göre değişmektedir. Güncel Antalya lazer epilasyon fiyat listemiz için randevu formunu doldurabilir veya 0 242 XXX XX XX numaralı hattımızdan bize ulaşabilirsiniz.'
+      },
+      {
+        question: 'Erkekler için lazer epilasyon işlemi güvenli mi?',
+        answer: 'Evet. Beatty Center\'da erkek lazer epilasyon uygulamalarında son teknoloji cihazlar kullanıyoruz. Göğüs, sırt, omuz gibi bölgelerde etkili ve güvenli sonuçlar elde ediyoruz.'
+      },
+      {
+        question: 'Buz lazer ile diode lazer arasındaki fark nedir?',
+        answer: 'Buz lazer başlıklı cihazlarımız işlem sırasında cildi soğutarak konfor sağlar, diode lazer ise koyu kıl köklerinde yüksek performans sunar. Uzmanlarımız cilt tipinize en uygun teknolojiyi seçer.'
+      },
+      {
+        question: 'Lazer epilasyon sonrası nelere dikkat etmeliyim?',
+        answer: 'İşlemden sonra 24 saat sıcak duş, sauna ve solaryumdan kaçınmanızı; yüksek SPF içeren güneş koruyucu kullanmanızı öneriyoruz. Detaylı bakım kılavuzunu seans sonrası ekibimiz size iletir.'
+      },
+      {
+        question: 'Beatty Center\'da lazer epilasyon acıtır mı?',
+        answer: 'Soğutma sistemli cihazlarımız sayesinde ağrı minimum seviyededir. Hassas ciltlerde lokal anestezik krem de uygulayabiliyoruz.'
+      },
+      {
+        question: 'Lazer epilasyon tüyleri kalıcı olarak yok eder mi?',
+        answer: 'Seanslar tamamlandığında kıl köklerinin %85–95\'i kalıcı olarak yok edilir. Kalan ince tüyler için yılda bir kez idame seansı önerilebilir.'
+      },
+      {
+        question: 'Antalya\'da lazer epilasyon için en uygun mevsim hangisidir?',
+        answer: 'Güneşin daha az olduğu kış ve ilkbahar ayları tercih edilse de, Beatty Center\'da yılın her döneminde güvenle lazer epilasyon yaptırabilirsiniz; önemli olan yüksek faktörlü güneş koruyucu kullanmaktır.'
+      }
     ]
   }
 };

@@ -20,7 +20,7 @@ export function Breadcrumb({ category }: BreadcrumbProps) {
             href={`/hizmetler#${category.id}`}
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            {category.name}
+           
           </Link>
         </>
       )}

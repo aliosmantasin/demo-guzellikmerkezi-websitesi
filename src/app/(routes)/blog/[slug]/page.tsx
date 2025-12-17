@@ -13,8 +13,9 @@ export const metadata: Metadata = {
   description: "Güzellik ve estetik dünyasından en güncel bilgiler ve uzman tavsiyeleri.",
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = MOCK_POSTS.find((post) => post.slug === params.slug)
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = MOCK_POSTS.find((post) => post.slug === slug)
 
   if (!post) {
     return (

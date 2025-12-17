@@ -5,11 +5,14 @@ export interface Service {
   description: string;
   fullDescription?: string;
   image: string;
+  videoUrl?: string;
+  videoPosterUrl?: string;
   duration: string;
   price: string;
   category: string;
   benefits: string[];
   process: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface ServiceCategory {

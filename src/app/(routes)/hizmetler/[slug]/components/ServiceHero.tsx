@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Service, ServiceCategory } from '@/types/services';
+import { CalendarCheck, Phone, MessageCircle } from 'lucide-react';
 
 interface ServiceHeroProps {
   service: Service;
   category?: ServiceCategory;
+  onRandevuClick?: () => void;
 }
 
-export function ServiceHero({ service, category }: ServiceHeroProps) {
+export function ServiceHero({ service, category, onRandevuClick }: ServiceHeroProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
       <div className="aspect-video relative rounded-2xl overflow-hidden shadow-xl">
@@ -61,9 +63,38 @@ export function ServiceHero({ service, category }: ServiceHeroProps) {
           </ul>
         </div>
 
-        <Button size="lg" className="w-full">
-          Randevu Al
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 w-full">
+          <Button size="lg" className="w-full sm:w-auto" onClick={onRandevuClick}>
+            <CalendarCheck className="h-4 w-4 mr-2" />
+            Randevu Al
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="w-full sm:w-auto"
+            asChild
+          >
+            <a
+              href="https://wa.me/905000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="h-4 w-4 mr-2" />
+              WhatsApp
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="w-full sm:w-auto"
+            asChild
+          >
+            <a href="tel:+905000000000">
+              <Phone className="h-4 w-4 mr-2" />
+              Telefon Et
+            </a>
+          </Button>
+        </div>
       </div>
     </div>
   );

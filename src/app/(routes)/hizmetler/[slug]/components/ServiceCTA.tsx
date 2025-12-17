@@ -1,7 +1,22 @@
-import Link from 'next/link';
+'use client';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetClose
+} from '@/components/ui/sheet';
+import { AppointmentForm } from './AppointmentForm';
 
-export function ServiceCTA() {
+interface ServiceCTAProps {
+  onRandevuClick?: () => void;
+}
+
+export function ServiceCTA({ onRandevuClick }: ServiceCTAProps) {
+  // Modal state artık üstte yönetiliyor, burada gerek yok
   return (
     <div className="bg-primary/5 rounded-2xl p-8 text-center">
       <h2 className="text-2xl font-bold mb-4">
@@ -12,14 +27,12 @@ export function ServiceCTA() {
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="outline" asChild>
-          <Link href="/iletisim">
+          <a href="/iletisim">
             Bize Ulaşın
-          </Link>
+          </a>
         </Button>
-        <Button size="lg" asChild>
-          <Link href="/randevu">
-            Hemen Randevu Alın
-          </Link>
+        <Button size="lg" onClick={onRandevuClick}>
+          Hemen Randevu Alın
         </Button>
       </div>
     </div>
